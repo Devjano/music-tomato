@@ -183,19 +183,17 @@ async function playsongyes(client, message, queue, song) {
             }
 
         let embed1 = new Discord.MessageEmbed()
-
             .setColor(config.colors.yes)
-            .setTitle("<a:jano_31:834550131658326055> Playing Song!")
+            .setTitle("Playing Song!")
             .setDescription(`Song: [\`${song.name}\`](${song.url})`)
-            .addField("<a:jano_28:799630995317850152> Requested by:", `>>> ${song.user}`, true)
-            .addField("<a:jano_44:840250687610683442> Duration:", `>>> \`${queue.formattedCurrentTime} / ${song.formattedDuration}\``, true)
-            .addField("<a:jano_49:840252555523260446> Queue:", `>>> \`${queue.songs.length} song(s) - ${queue.formattedDuration}\``, true)
-            .addField("<a:jano_45:840250785446363157> Volume:", `>>> \`${queue.volume} %\``, true)
-            .addField("<a:jano_47:840252353855881278> Loop:", `>>> ${queue.repeatMode ? queue.repeatMode === 2 ? "<a:jano_29:840650829257637900> Queue" : "<a:jano_29:840650829257637900> Song" : "<a:jano_26:799630865474256972>"}`, true)
-            .addField("<a:jano_22:840486258362417162> Autoplay:", `>>> ${queue.autoplay ? "<a:jano_29:840650829257637900>" : "<a:jano_26:799630865474256972>"}`, true)
-            .addField("<a:jano_43:840250638483062784> Download Song:", `>>> [\`Click here\`](${song.streamURL})`, true)
-            .addField("<a:jano_24:799630717507862558> Filter:", `>>> \`${queue.filter || "<a:jano_26:799630865474256972>"}\``, true)
-            .addField("<a:jano_31:834550131658326055> DJ-Role:", `>>> ${djs}`, true)
+            .addField("💡 Requested by:", `>>> ${song.user}`, true)
+            .addField("⏱ Duration:", `>>> \`${queue.formattedCurrentTime} / ${song.formattedDuration}\``, true)
+            .addField("🌀 Queue:", `>>> \`${queue.songs.length} song(s) - ${queue.formattedDuration}\``, true)
+            .addField("🔊 Volume:", `>>> \`${queue.volume} %\``, true)
+            .addField("♾ Loop:", `>>> ${queue.repeatMode ? queue.repeatMode === 2 ? "✅ Queue" : "✅ Song" : ":x:"}`, true)
+            .addField("↪️ Autoplay:", `>>> ${queue.autoplay ? "✅" : ":x:"}`, true)
+            .addField("🎧 Download Song:", `>>> [\`Click here\`](${song.streamURL})`, true)
+            .addField("❔ Filter:", `>>> \`${queue.filter || ":x:"}\``, true)
             .setFooter(client.user.username + " | by: jano", client.user.displayAvatarURL())
             .setAuthor(message.author.tag, message.member.user.displayAvatarURL({
                 dynamic: true
